@@ -6,6 +6,7 @@ public class Lazer{
         rectMode(NORMAL);
     }
     
+    // fires an electron from the lazer
     public void fire(){
        electrons.add(new Electron(new PVector(400, 750), 4));
     }
