@@ -16,6 +16,7 @@ class Lazer {
 
    // fires an electron from the lazer
    void fire() {
-      targetElectron.animating = true; 
+      if (!targetElectron.done)
+         targetElectron.animating = true; 
    }
 }

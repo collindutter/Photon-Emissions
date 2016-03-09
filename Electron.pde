@@ -1,4 +1,4 @@
-class Electron{
+class Electron {
    PVector position; // Position of electron
    PVector velocity; // Velocity of electron (directional)
    final int SPEED = 5; // Speed of electron (non-directional) 

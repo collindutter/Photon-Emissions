@@ -7,9 +7,11 @@ class Photon {
    Photon(PVector pos) {
       position = pos;
       // assign random velocities
-      int xVel = random(0, 1) >= .5 ? SPEED : -SPEED; 
-      int yVel = random(0, 1) >= .5 ? SPEED : -SPEED;
+      float rand;
+      float xVel = (rand = random(0, 1.0)) >= .5 ? rand * SPEED : -rand * SPEED; 
+      float yVel = (rand = random(0, 1.0)) >= .5 ? rand * SPEED : -rand * SPEED; 
       velocity = new PVector(xVel, yVel);
+      velocity.normalize();
       radius = 5;
    }
 

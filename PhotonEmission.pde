@@ -2,6 +2,7 @@ Lazer lazer; // Lazer for shooting out electrons
 ArrayList<EnergyLevel> energyLevels; // List to hold the energy levels
 ArrayList<Photon> photons; // List to hold the photons
 ArrayList<Lazer> lazers; // List to hold the electrons fired by the lazer
+ColorSpectrum spectrum;
 
 // The usual setup stuff
 void setup() {
@@ -21,15 +22,13 @@ void init() {
    lazers.add(new Lazer(new PVector(200, 750), getEnergyLevel(1).electrons.get(0)));
    lazers.add(new Lazer(new PVector(450, 750), getEnergyLevel(1).electrons.get(1)));
    lazers.add(new Lazer(new PVector(700, 750), getEnergyLevel(1).electrons.get(2)));
+
+   spectrum = new ColorSpectrum();
 }
 
 // The usual drawing stuff
 void draw(){
    background(255);
-   // Render all the energy levels
-   for(EnergyLevel level : energyLevels) {
-      level.render();
-   }
 
    for (Lazer l : lazers)
       l.render();
@@ -44,6 +43,12 @@ void draw(){
       }
       p.render();
    }
+   // Render all the energy levels
+   for(EnergyLevel level : energyLevels) {
+      level.render();
+   }
+
+   /*spectrum.render();*/
 
    textSize(15);
    text(frameRate, 0, 15);
@@ -68,6 +73,8 @@ void keyPressed() {
       lazers.get(1).fire();
    if (key == '3')
       lazers.get(2).fire();
+   if (key == 'r')
+      init();
 }
 
 boolean closeEnoughTo(PVector curr, PVector other, float closeness) {

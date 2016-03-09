@@ -36,6 +36,8 @@ class Arrow {
    void drawArrow() {
       stroke(0);
       line(tailPos.x, tailPos.y, headPos.x, headPos.y);
+      line(headPos.x, headPos.y, headPos.x + 10, headPos.y - 10);
+      line(headPos.x, headPos.y, headPos.x - 10, headPos.y - 10);
    }
 
 }

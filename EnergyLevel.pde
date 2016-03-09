@@ -43,9 +43,8 @@ class EnergyLevel {
    }
 
    void drawEnergyLevel() {
-      noFill();
-
       stroke(color(0, 0, 255));
+      strokeWeight(3);
       line(100, position.y, 800, position.y);
       fill(0);
       textSize(25);
