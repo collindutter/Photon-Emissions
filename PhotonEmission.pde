@@ -13,7 +13,7 @@ void setup() {
 // Even more of the usual setup stuff
 void init() {
    energyLevels = new ArrayList<EnergyLevel>();
-   for(int i = 1; i <= 6; i++){
+   for(int i = 1; i <= 5; i++){
       energyLevels.add(new EnergyLevel(i));
    }
    photons = new ArrayList<Photon>();
@@ -33,7 +33,6 @@ void draw(){
    for (Lazer l : lazers)
       l.render();
 
-
    // Render all the photons, removing if off-screen
    for(int i = 0; i < photons.size(); i++) {
       Photon p = photons.get(i);
@@ -50,7 +49,15 @@ void draw(){
 
    /*spectrum.render();*/
 
+   stroke(0);
+   noFill();
+   rectMode(CORNER);
+   rect(600, 10, 190, 75);
    textSize(15);
+   fill(0);
+   text("UV Photon", 610, 35);
+   text("Visible Photon", 610, 55);
+   text("IR Photon", 610, 75);
    text(frameRate, 0, 15);
 }
 

@@ -3,6 +3,7 @@ class Photon {
    PVector velocity; // velocity of photon
    int radius; // radius of photon
    final int SPEED = 5;
+   final int RADIUS = 7;
 
    Photon(PVector pos) {
       position = pos;
@@ -12,7 +13,6 @@ class Photon {
       float yVel = (rand = random(0, 1.0)) >= .5 ? rand * SPEED : -rand * SPEED; 
       velocity = new PVector(xVel, yVel);
       velocity.normalize();
-      radius = 5;
    }
 
    void render(){
@@ -21,15 +21,5 @@ class Photon {
    }
 
    void drawPhoton() {
-      // draw base of photon
-      fill(#ff9933);
-      ellipse(position.x, position.y, radius*2, radius*2);
-      // draw stroke of photon
-      noFill();
-      strokeWeight(3);
-      stroke(#ffff00);
-      ellipse(position.x, position.y, radius*2, radius*2);
-      strokeWeight(1);
-      stroke(0);
    }
 }
