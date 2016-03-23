@@ -1,7 +1,7 @@
-Lazer lazer; // Lazer for shooting out electrons
+Laser laser; // Laser for shooting out electrons
 ArrayList<EnergyLevel> energyLevels; // List to hold the energy levels
 ArrayList<Photon> photons; // List to hold the photons
-ArrayList<Lazer> lazers; // List to hold the electrons fired by the lazer
+ArrayList<Laser> lasers; // List to hold the electrons fired by the laser
 ColorSpectrum spectrum;
 UVPhoton legendUVPhoton;
 VisiblePhoton legendVisPhoton;
@@ -21,11 +21,11 @@ void init() {
       energyLevels.add(new EnergyLevel(i));
    }
    photons = new ArrayList<Photon>();
-   lazers = new ArrayList<Lazer>();
+   lasers = new ArrayList<Laser>();
    
-   lazers.add(new Lazer(new PVector(200, 750), getEnergyLevel(1).electrons.get(0)));
-   lazers.add(new Lazer(new PVector(450, 750), getEnergyLevel(1).electrons.get(1)));
-   lazers.add(new Lazer(new PVector(700, 750), getEnergyLevel(1).electrons.get(2)));
+   lasers.add(new Laser(new PVector(200, 750), getEnergyLevel(1).electrons.get(0)));
+   lasers.add(new Laser(new PVector(450, 750), getEnergyLevel(1).electrons.get(1)));
+   lasers.add(new Laser(new PVector(700, 750), getEnergyLevel(1).electrons.get(2)));
 
    spectrum = new ColorSpectrum();
 
@@ -38,7 +38,7 @@ void init() {
 void draw(){
    background(255);
 
-   for (Lazer l : lazers)
+   for (Laser l : lasers)
       l.render();
 
    // Render all the photons, removing if off-screen
@@ -93,11 +93,11 @@ void addPhoton(Photon ph) {
 
 void keyPressed() {
    if (key == '1')
-      lazers.get(0).fire();
+      lasers.get(0).fire();
    if (key == '2')
-      lazers.get(1).fire();
+      lasers.get(1).fire();
    if (key == '3')
-      lazers.get(2).fire();
+      lasers.get(2).fire();
    if (key == 'r')
       init();
 }
@@ -105,7 +105,7 @@ void keyPressed() {
 void mouseClicked(MouseEvent event) {
    float mx = pmouseX, my = pmouseY;
    
-   for (Lazer laser : lazers) {
+   for (Laser laser : lasers) {
       if (mx > laser.position.x - 25 && mx < laser.position.x + 25 && my > 700)
          laser.fire();
    }
