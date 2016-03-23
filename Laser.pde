@@ -25,8 +25,9 @@ class Laser {
 
    // fires an electron from the laser
    void fire() {
-      startFrame = frameCount;
-      if (!targetElectron.done)
+      if (!targetElectron.done) {
+         startFrame = frameCount;
          targetElectron.animating = true; 
+      }
    }
 }
