@@ -76,7 +76,7 @@ void draw(){
    textAlign(LEFT);
    text("IR Photon", 610, 75);
    legendIRPhoton.drawPhoton();
-   text(frameRate, 0, 15);
+   /*text(frameRate, 0, 15);*/
 }
 
 void addElectronToEnergyLevel(Electron e, int energyLevel) {
