@@ -3,10 +3,14 @@ ArrayList<EnergyLevel> energyLevels; // List to hold the energy levels
 ArrayList<Photon> photons; // List to hold the photons
 ArrayList<Lazer> lazers; // List to hold the electrons fired by the lazer
 ColorSpectrum spectrum;
+UVPhoton legendUVPhoton;
+VisiblePhoton legendVisPhoton;
+IRPhoton legendIRPhoton;
 
 // The usual setup stuff
 void setup() {
    size(800, 800);
+   smooth(2);
    init();
 }
 
@@ -24,6 +28,10 @@ void init() {
    lazers.add(new Lazer(new PVector(700, 750), getEnergyLevel(1).electrons.get(2)));
 
    spectrum = new ColorSpectrum();
+
+   legendUVPhoton = new UVPhoton(new PVector(750, 25), new PVector(0, 0));
+   legendVisPhoton = new VisiblePhoton(new PVector(750, 50), new PVector(0, 0));
+   legendIRPhoton = new IRPhoton(new PVector(750, 75), new PVector(0, 0));
 }
 
 // The usual drawing stuff
@@ -52,12 +60,22 @@ void draw(){
    stroke(0);
    noFill();
    rectMode(CORNER);
-   rect(600, 10, 190, 75);
+   rect(600, 10, 190, 80);
    textSize(15);
    fill(0);
+   textAlign(LEFT);
    text("UV Photon", 610, 35);
+   legendUVPhoton.drawPhoton();
+   textSize(15);
+   fill(0);
+   textAlign(LEFT);
    text("Visible Photon", 610, 55);
+   legendVisPhoton.drawPhoton();
+   textSize(15);
+   fill(0);
+   textAlign(LEFT);
    text("IR Photon", 610, 75);
+   legendIRPhoton.drawPhoton();
    text(frameRate, 0, 15);
 }
 
@@ -84,6 +102,15 @@ void keyPressed() {
       init();
 }
 
+void mouseClicked(MouseEvent event) {
+   float mx = pmouseX, my = pmouseY;
+   
+   for (Lazer laser : lazers) {
+      if (mx > laser.position.x - 25 && mx < laser.position.x + 25 && my > 700)
+         laser.fire();
+   }
+}
+
 boolean closeEnoughTo(PVector curr, PVector other, float closeness) {
    return abs(curr.y - other.y) < closeness;
 }
@@ -98,3 +125,4 @@ boolean isOffScreen(PVector position) {
    float y = position.y;
    return x < 0 || y < 0 || x > width || y > height;
 }
+

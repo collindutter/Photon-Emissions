@@ -47,6 +47,7 @@ class EnergyLevel {
       strokeWeight(3);
       line(100, position.y, 800, position.y);
       fill(0);
+      textAlign(LEFT);
       textSize(25);
       text("n = " + number, 10, position.y);
       stroke(0);

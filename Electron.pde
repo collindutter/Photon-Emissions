@@ -2,7 +2,7 @@ class Electron {
    PVector position; // Position of electron
    PVector velocity; // Velocity of electron (directional)
    final int SPEED = 5; // Speed of electron (non-directional) 
-   final int RADIUS = 7; // Radius of electron
+   final int RADIUS = 10; // Radius of electron
    boolean animating; // Whether or not the elctron is in the rising phase of it's animation
    boolean done;
    int targetLevel;

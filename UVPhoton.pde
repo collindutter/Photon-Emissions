@@ -3,16 +3,18 @@ class UVPhoton extends Photon {
       super(pos);
    }
 
+   UVPhoton(PVector pos, PVector vel) {
+      super(pos);
+   }
+
    void drawPhoton() {
-      // draw base of photon
-      fill(#af9933);
-      ellipse(position.x, position.y, RADIUS*2, RADIUS*2);
-      // draw stroke of photon
       noFill();
       strokeWeight(3);
-      stroke(#afff00);
-      ellipse(position.x, position.y, RADIUS*2, RADIUS*2);
-      strokeWeight(1);
       stroke(0);
+      ellipse(position.x, position.y, RADIUS * 2, RADIUS * 2);
+      textSize(12);
+      textAlign(CENTER);
+      fill(#cc33ff);
+      text("UV", position.x, position.y + 6);
    }
 }

@@ -3,16 +3,16 @@ class VisiblePhoton extends Photon{
       super(pos);
    }  
 
+   VisiblePhoton(PVector pos, PVector vel) {
+      super(pos, vel);
+   }
+
    void drawPhoton() {
-      // draw base of photon
-      fill(#2f9933);
-      ellipse(position.x, position.y, RADIUS*2, RADIUS*2);
-      // draw stroke of photon
+      fill(#ff9933);
+      ellipse(position.x, position.y, RADIUS * 2, RADIUS * 2);
       noFill();
       strokeWeight(3);
-      stroke(#2fff00);
-      ellipse(position.x, position.y, RADIUS*2, RADIUS*2);
-      strokeWeight(1);
-      stroke(0);
+      stroke(#ffff00);
+      ellipse(position.x, position.y, RADIUS * 2, RADIUS * 2);
    }
 }

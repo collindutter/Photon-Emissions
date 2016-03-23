@@ -1,9 +1,9 @@
-class Photon {
+abstract class Photon {
    PVector position; // position of photon
    PVector velocity; // velocity of photon
    int radius; // radius of photon
    final int SPEED = 5;
-   final int RADIUS = 7;
+   final int RADIUS = 10;
 
    Photon(PVector pos) {
       position = pos;
@@ -15,11 +15,15 @@ class Photon {
       velocity.normalize();
    }
 
+   Photon(PVector pos, PVector vel) {
+      position = pos;
+      velocity = vel;
+   }
+
    void render(){
       position.add(velocity);
       drawPhoton();
    }
 
-   void drawPhoton() {
-   }
+   abstract void drawPhoton();
 }

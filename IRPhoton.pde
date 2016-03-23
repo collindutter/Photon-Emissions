@@ -3,17 +3,19 @@ class IRPhoton extends Photon {
       super(pos);
    }
 
+   IRPhoton(PVector pos, PVector vel) {
+      super(pos, vel);
+   }
+
    void drawPhoton() {
-      // draw base of photon
-      fill(#ff9933);
-      ellipse(position.x, position.y, RADIUS*2, RADIUS*2);
-      // draw stroke of photon
       noFill();
       strokeWeight(3);
-      stroke(#ffff00);
-      ellipse(position.x, position.y, RADIUS*2, RADIUS*2);
-      strokeWeight(1);
       stroke(0);
+      ellipse(position.x, position.y, RADIUS * 2, RADIUS * 2);
+      textSize(12);
+      textAlign(CENTER);
+      fill(#ff3300);
+      text("IR", position.x, position.y + 6);
    }
 
 }
