@@ -2,7 +2,7 @@ abstract class Photon {
    PVector position; // position of photon
    PVector velocity; // velocity of photon
    int radius; // radius of photon
-   final int SPEED = 5;
+   final int SPEED = 8;
    final int RADIUS = 10;
 
    Photon(PVector pos) {

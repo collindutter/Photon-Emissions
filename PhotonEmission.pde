@@ -57,6 +57,7 @@ void draw(){
 
    /*spectrum.render();*/
 
+   // Legend
    stroke(0);
    noFill();
    rectMode(CORNER);
@@ -64,7 +65,7 @@ void draw(){
    textSize(15);
    fill(0);
    textAlign(LEFT);
-   text("UV Photon", 610, 35);
+   text("UV Photon", 610, 30);
    legendUVPhoton.drawPhoton();
    textSize(15);
    fill(0);
@@ -74,8 +75,18 @@ void draw(){
    textSize(15);
    fill(0);
    textAlign(LEFT);
-   text("IR Photon", 610, 75);
+   text("IR Photon", 610, 80);
    legendIRPhoton.drawPhoton();
+
+   // Reset button
+   rectMode(CORNER);
+   noFill();
+   stroke(0);
+   rect(10, 10, 60, 25);
+   fill(0);
+   textAlign(CENTER);
+   textSize(15);
+   text("RESET", 40, 30);
    /*text(frameRate, 0, 15);*/
 }
 
@@ -109,6 +120,8 @@ void mouseClicked(MouseEvent event) {
       if (mx > laser.position.x - 25 && mx < laser.position.x + 25 && my > 700)
          laser.fire();
    }
+   if (mx >= 10 && mx <= 70 && my >= 10 && my <= 35)
+      init();
 }
 
 boolean closeEnoughTo(PVector curr, PVector other, float closeness) {
