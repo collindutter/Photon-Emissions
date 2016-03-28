@@ -24,12 +24,18 @@ class Arrow {
       if (animating)
          headPos.add(velocity);
       if (abs(yDist(headPos, halfway)) < SPEED && !photonFired) {
-         if (targetLevel == 1)
+         if (targetLevel == 1) {
             addPhoton(new UVPhoton(new PVector(headPos.x, headPos.y)));
-         if (targetLevel == 2)
+            spectrum.uvRevealed = true;
+         }
+         if (targetLevel == 2) {
             addPhoton(new VisiblePhoton(new PVector(headPos.x, headPos.y)));
-         if (targetLevel == 3)
+            spectrum.visRevealed = true;
+         }
+         if (targetLevel == 3) {
             addPhoton(new IRPhoton(new PVector(headPos.x, headPos.y)));
+            spectrum.irRevealed = true;
+         }
          photonFired = true;
       }
       float dist = yDist(headPos, getEnergyLevel(targetLevel).position);

@@ -15,7 +15,7 @@ class IRPhoton extends Photon {
       textSize(12);
       textAlign(CENTER);
       fill(#ff3300);
-      text("IR", position.x, position.y + 6);
+      text("IR", position.x + 1, position.y + 6);
    }
 
 }

@@ -38,6 +38,8 @@ void init() {
 void draw(){
    background(255);
 
+   spectrum.render();
+
    for (Laser l : lasers)
       l.render();
 
@@ -55,7 +57,6 @@ void draw(){
       level.render();
    }
 
-   /*spectrum.render();*/
 
    // Legend
    stroke(0);
@@ -115,13 +116,14 @@ void keyPressed() {
 
 void mouseClicked(MouseEvent event) {
    float mx = pmouseX, my = pmouseY;
-   
+
+   if (mx >= 10 && mx <= 70 && my >= 10 && my <= 35)
+      init();
+
    for (Laser laser : lasers) {
       if (mx > laser.position.x - 25 && mx < laser.position.x + 25 && my > 700)
          laser.fire();
    }
-   if (mx >= 10 && mx <= 70 && my >= 10 && my <= 35)
-      init();
 }
 
 boolean closeEnoughTo(PVector curr, PVector other, float closeness) {
