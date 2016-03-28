@@ -20,9 +20,8 @@ class Electron {
    void render() {
       if (!done)
          drawElectron();
-      if (animating) {
+      if (animating)
          position.add(velocity);
-      }
       float dist = yDist(position, getEnergyLevel(targetLevel).position);
       if (abs(dist) < SPEED / 2) {
          animating = false;
@@ -33,11 +32,7 @@ class Electron {
    void drawElectron() {
       // draw base of electron
       fill(#3455F5);
-      ellipse(position.x, position.y, RADIUS * 2, RADIUS * 2);
-      // draw stroke of electron
       stroke(#00ccff);
-      strokeWeight(3);
-      noFill();
       ellipse(position.x, position.y, RADIUS * 2, RADIUS * 2);
    }
 }

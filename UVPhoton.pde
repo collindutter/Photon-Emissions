@@ -8,13 +8,12 @@ class UVPhoton extends Photon {
    }
 
    void drawPhoton() {
-      noFill();
-      strokeWeight(3);
+      fill(0);
       stroke(0);
       ellipse(position.x, position.y, RADIUS * 2, RADIUS * 2);
       textSize(12);
       textAlign(CENTER);
       fill(#cc33ff);
-      text("UV", position.x, position.y + 6);
+      text("UV", position.x + 1, position.y + 6);
    }
 }

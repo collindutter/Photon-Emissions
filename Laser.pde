@@ -16,10 +16,10 @@ class Laser {
       noStroke();
       rect(position.x, 750, 50, 100);
       rectMode(NORMAL);
-      if (frameCount > 30 && frameCount - startFrame < 30) {
+      if (frameCount > 30 && frameCount - startFrame < 20) {
          fill(#ffff00);
          rectMode(CORNER);
-         rect(position.x - 7, 700 - 200, 14, 200);
+         rect(position.x - 7, 700 - 195, 14, 195);
       }
    }
 

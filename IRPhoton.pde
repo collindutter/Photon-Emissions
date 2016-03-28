@@ -8,8 +8,7 @@ class IRPhoton extends Photon {
    }
 
    void drawPhoton() {
-      noFill();
-      strokeWeight(3);
+      fill(0);
       stroke(0);
       ellipse(position.x, position.y, RADIUS * 2, RADIUS * 2);
       textSize(12);

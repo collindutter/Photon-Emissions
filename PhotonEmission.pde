@@ -40,6 +40,12 @@ void draw(){
 
    spectrum.render();
 
+   // Render all the energy levels
+   for(EnergyLevel level : energyLevels) {
+      level.render();
+   }
+
+
    for (Laser l : lasers)
       l.render();
 
@@ -52,15 +58,10 @@ void draw(){
       }
       p.render();
    }
-   // Render all the energy levels
-   for(EnergyLevel level : energyLevels) {
-      level.render();
-   }
-
 
    // Legend
    stroke(0);
-   noFill();
+   fill(255);
    rectMode(CORNER);
    rect(600, 10, 190, 80);
    textSize(15);
@@ -81,14 +82,13 @@ void draw(){
 
    // Reset button
    rectMode(CORNER);
-   noFill();
+   fill(255);
    stroke(0);
    rect(10, 10, 60, 25);
    fill(0);
    textAlign(CENTER);
    textSize(15);
    text("RESET", 40, 30);
-   /*text(frameRate, 0, 15);*/
 }
 
 void addElectronToEnergyLevel(Electron e, int energyLevel) {
@@ -138,6 +138,6 @@ float yDist(PVector p1, PVector p2) {
 boolean isOffScreen(PVector position) {
    float x = position.x;
    float y = position.y;
-   return x < 0 || y < 0 || x > width || y > height;
+   return x < -15 || y < -15 || x > width + 15 || y > height + 15;
 }
 
