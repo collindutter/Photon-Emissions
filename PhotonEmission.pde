@@ -36,7 +36,7 @@ void init() {
 
 // The usual drawing stuff
 void draw(){
-   background(255);
+   background(#86A7FF);
 
    spectrum.render();
 
@@ -61,7 +61,7 @@ void draw(){
 
    // Legend
    stroke(0);
-   fill(255);
+   fill(#86A7FF);
    rectMode(CORNER);
    rect(600, 10, 190, 80);
    textSize(15);
@@ -82,7 +82,7 @@ void draw(){
 
    // Reset button
    rectMode(CORNER);
-   fill(255);
+   fill(#86A7FF);
    stroke(0);
    rect(10, 10, 60, 25);
    fill(0);
@@ -140,4 +140,3 @@ boolean isOffScreen(PVector position) {
    float y = position.y;
    return x < -15 || y < -15 || x > width + 15 || y > height + 15;
 }
-

@@ -1,7 +1,7 @@
 class EnergyLevel {
    int number;
    PVector position;
-   ArrayList<Electron> electrons; // List to hold the electrons fired by the lazer
+   ArrayList<Electron> electrons; // List to hold the electrons fired by the laser
 
    int locs[][] = {{4, 1}, {3, 2}, {2, 3}}; // {quantity, target}
 
@@ -26,16 +26,20 @@ class EnergyLevel {
       for (int j = 0; j < electrons.size(); j++) {
          Electron e = electrons.get(j);
          e.render();
+
          if (e.done && !e.arrowsMade) {
             int[] info = locs[j];
 
             for (int i = 0; i < info[0]; i++) {
                Electron base = electrons.get(j);
+
                PVector pos = new PVector();
                pos.x = base.position.x + 25 * (i + 1);
                pos.y = getEnergyLevel(base.targetLevel - i).position.y;
+
                ArrowElectron ae = new ArrowElectron(pos, info[1]);
                addElectronToEnergyLevel(ae, base.targetLevel);
+
                e.arrowsMade = true; 
             }
          }
