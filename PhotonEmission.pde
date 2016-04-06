@@ -36,7 +36,7 @@ void init() {
 
 // The usual drawing stuff
 void draw(){
-   background(#86A7FF);
+   background(255);
 
    spectrum.render();
 
@@ -61,7 +61,7 @@ void draw(){
 
    // Legend
    stroke(0);
-   fill(#86A7FF);
+   fill(255);
    rectMode(CORNER);
    rect(600, 10, 190, 80);
    textSize(15);
@@ -82,7 +82,7 @@ void draw(){
 
    // Reset button
    rectMode(CORNER);
-   fill(#86A7FF);
+   fill(255);
    stroke(0);
    rect(10, 10, 60, 25);
    fill(0);

@@ -30,17 +30,17 @@ class ColorSpectrum {
       if (uvRevealed)
          if (frameCount % 2 == 0)
             uvOpacity -= 5;
-         fill(#86A7FF, uvOpacity);
+         fill(255, uvOpacity);
          rect(pos.x, pos.y, WIDTH / 3, HEIGHT);
       if (visRevealed)
          if (frameCount % 2 == 0)
             visOpactiy -= 5;
-      fill(#86A7FF, visOpactiy);
+      fill(255, visOpactiy);
       rect(pos.x + WIDTH / 3, pos.y, WIDTH / 3, HEIGHT);
       if (irRevealed)
          if (frameCount % 2 == 0)
             irOpacity -= 5;
-      fill(#86A7FF, irOpacity);
+      fill(255, irOpacity);
       rect(pos.x + WIDTH * 2 / 3, pos.y, WIDTH / 3, HEIGHT);
    }
 }
